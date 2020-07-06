@@ -1,0 +1,62 @@
+连接查询
+子查询
+非常用关键字 case when
+函数库
+存储过程
+
+index
+index_type: unique normal full text
+index_method:btree hash
+添加方式
+建表时添加 KEY `index_name` (`column_name`) USING index_method
+建表后添加 CREATE index_type INDEX index_name ON table_name (column)
+
+存储引擎
+innodb
+MyISAM
+
+索引命中问题
+hash  只能用于 等于 IN IS 查找
+btree 索引失效原因也有很多 违背最左原则
+btree 索引失效原因也有很多
+违背最左原则
+列值计算
+列值进行函数操作
+字段与查询参数类型不匹配  (隐式转换)
+or
+is null 不走 is not null 走
+like(%不在前)
+not in    not exist
+CBO计算走索引花费过大的情况
+
+
+语句优化  CBO(Cost-Based Optimization) RBO(Rule-Based Optimization)
+1.减少对表的检索
+2.使用索引
+3.减少解析
+优化工具
+1.Explain Plan
+2.SQL Trace
+3.tkprof
+
+1.减少对表的检索
+
+子查询
+去除不必要的条件和数据源
+EXISTS 和 IN，谁更合适？
+避免使用函数处理索引列
+避免对索引列计算
+使用基于函数的索引
+使用HINT
+2.使用索引
+
+索引也是需要开销的，所以并不一定要使用索引。
+对于数据量较大的表，尽量 使用索引。
+程序在UT阶段由于没有实际环境，所以不要使用HINT。
+3.减少解析
+
+共享池（Shared Pool）
+对于已经运用过的SQL语句，Oracle数据库会将信息存到共享池中，再执行相同的SQL语句时就可以不用再解析了。
+原则上，Oracle数据库不会去利用不一样的SQL，哪怕仅仅是多出一个空格，或者大小写的区别。所以为了提高SQL的再利用率，要彻底的遵守编码规范。
+
+使用动态SQL
