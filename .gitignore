@@ -1,2 +1,7 @@
 /.idea/
 mvn-project.iml
+.project
+.settings
+sql/.classpath
+sql/.gitignore
+
