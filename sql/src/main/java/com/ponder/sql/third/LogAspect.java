@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 @Aspect
 @Component
 public class LogAspect {
-    @Pointcut("execution(public * com.dalaoyang.controller.*.*(..))")
+    @Pointcut("execution(public * com.ponder.sql.controller.*.*(..))")
     public void LogAspect(){}
 
     @Before("LogAspect()")
