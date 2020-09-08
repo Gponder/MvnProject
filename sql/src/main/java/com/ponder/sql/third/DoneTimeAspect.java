@@ -37,12 +37,12 @@ public class DoneTimeAspect {
         System.out.println("with in after");
     }
 
-    @After("@target(doneTime)")
+//    @After("@target(doneTime)")
     public void After2(DoneTime doneTime) throws Throwable {
         System.out.println("target after");
     }
 
-    @After("@args(doneTime)")
+//    @After("@args(doneTime)")
     public void After(DoneTime doneTime) throws Throwable {
         System.out.println("target after");
     }
