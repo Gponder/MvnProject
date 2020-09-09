@@ -7,5 +7,6 @@ package com.ponder.sql.aop;
  */
 public enum PointCutType {
     annotation,
-    within
+    within,
+    args
 }

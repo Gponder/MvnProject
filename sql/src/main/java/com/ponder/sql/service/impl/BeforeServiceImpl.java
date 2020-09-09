@@ -1,6 +1,7 @@
 package com.ponder.sql.service.impl;
 
 import com.ponder.sql.aop.*;
+import com.ponder.sql.model.vo.UserVO;
 import com.ponder.sql.service.BeforeService;
 import org.springframework.stereotype.Service;
 
@@ -15,12 +16,14 @@ public class BeforeServiceImpl implements BeforeService {
 
     @BeforePointCut(type = PointCutType.within)
     @Override
-    public String apiInfo() {
+    public String info() {
+        System.out.println("service info method");
         return "service is running";
     }
 
     @Override
-    public String login() {
-        return "login";
+    public String login(UserVO userVO) {
+        System.out.println(userVO.getUsername()+userVO.getPassword()+"method");
+        return userVO.getUsername()+" login success";
     }
 }

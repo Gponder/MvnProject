@@ -1,5 +1,6 @@
 package com.ponder.sql.controller;
 
+import com.ponder.sql.model.vo.UserVO;
 import com.ponder.sql.service.BeforeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,13 +19,14 @@ public class BeforeController {
     @Autowired
     private BeforeService beforeService;
 
-    @GetMapping("service")
+    @GetMapping("info")
     public String serviceInvoke(){
-        return beforeService.apiInfo();
+        return beforeService.info();
     }
 
     @GetMapping("login")
-    public String login(){
-        return beforeService.login();
+    public String login(UserVO userVO){
+        System.out.println("login controller");
+        return beforeService.login(userVO);
     }
 }
