@@ -1,7 +1,7 @@
 package com.ponder.sql.model.vo;
 
-import com.ponder.sql.aop.BeforePointCut;
-import com.ponder.sql.aop.PointCutType;
+import com.ponder.sql.aop.before.BeforePointCut;
+import com.ponder.sql.aop.before.PointCutType;
 
 /**
  * @auth ponder

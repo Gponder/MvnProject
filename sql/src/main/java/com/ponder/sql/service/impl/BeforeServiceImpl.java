@@ -1,6 +1,7 @@
 package com.ponder.sql.service.impl;
 
-import com.ponder.sql.aop.*;
+import com.ponder.sql.aop.before.BeforePointCut;
+import com.ponder.sql.aop.before.PointCutType;
 import com.ponder.sql.model.vo.UserVO;
 import com.ponder.sql.service.BeforeService;
 import org.springframework.stereotype.Service;
@@ -14,7 +15,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class BeforeServiceImpl implements BeforeService {
 
-    @BeforePointCut(type = PointCutType.within)
+    @BeforePointCut(type = PointCutType.annotation)
     @Override
     public String info() {
         System.out.println("service info method");

@@ -1,4 +1,4 @@
-package com.ponder.sql.aop;
+package com.ponder.sql.aop.before;
 
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 /**
+ * 多切面实例
  * @auth ponder
  * @Email gponder.g@gmail.com
  * @create 2020/9/9 16:37

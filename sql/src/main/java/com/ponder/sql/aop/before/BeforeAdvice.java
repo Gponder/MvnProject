@@ -1,4 +1,4 @@
-package com.ponder.sql.aop;
+package com.ponder.sql.aop.before;
 
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
