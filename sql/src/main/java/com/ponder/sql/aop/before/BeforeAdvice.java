@@ -54,6 +54,13 @@ public class BeforeAdvice {
         System.out.println("this timeStamp before"+new Date(System.currentTimeMillis()));
     }
 
+    @Before("args() && execution(public * com.ponder.sql.service.BeforeService.*(..))")
+    public void before7(){
+        System.out.println("args() timeStamp before"+new Date(System.currentTimeMillis()));
+    }
+
+
+
 //    @Pointcut("execution(* *(..)) && within(com.ponder.sql.service.*)")
 //    private void pointCutMethod(){
 //    }
