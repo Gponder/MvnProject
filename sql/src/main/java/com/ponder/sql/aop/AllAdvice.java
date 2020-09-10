@@ -1,8 +1,8 @@
 package com.ponder.sql.aop;
 
-import org.aspectj.lang.annotation.AfterReturning;
-import org.aspectj.lang.annotation.Around;
-import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.*;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 /**
@@ -12,26 +12,39 @@ import org.springframework.stereotype.Component;
  */
 @Aspect
 @Component
+@Order(1)
 public class AllAdvice {
 
-//    @Around()
-    public void around(){
-
+    @Pointcut("execution(* com.ponder.sql.controller.ApiController.*(..))")
+    public void jointPoint(){
     }
+
+    @Around("jointPoint()")
+    public Object around(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
+        System.out.println("All around 1");
+        Object res = proceedingJoinPoint.proceed();
+        System.out.println("All around 2");
+        return res;
+    }
+
+    @Before("jointPoint()")
     public void before(){
-
+        System.out.println("All before");
     }
+
+    @After("jointPoint()")
     public void after(){
-
+        System.out.println("All after");
     }
+
+    @AfterReturning("jointPoint()")
     public void afterReturning(){
-
+        System.out.println("All after returning");
     }
+
+    @AfterThrowing("jointPoint()")
     public void afterThrows(){
-
-    }
-    public void declareParents(){
-
+        System.out.println("All after throws");
     }
 
 }

@@ -14,4 +14,9 @@ public class ApiController {
 	public String info() {
 		return "info";
 	}
+
+	@GetMapping("all")
+	public String all(String username)throws NullPointerException{
+		return "all"+username.length();
+	}
 }
