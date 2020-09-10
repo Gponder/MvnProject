@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 public class LogServiceImpl implements LogService {
     @Override
     public String log(String msg) {
-        System.out.println("log service"+msg);
-        return "log service"+msg;
+        System.out.println("log service "+msg);
+        return "log service "+msg;
     }
 }

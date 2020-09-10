@@ -1,6 +1,5 @@
 package com.ponder.sql.aop;
 
-import com.ponder.sql.service.BeforeService;
 import com.ponder.sql.service.LogService;
 import com.ponder.sql.service.impl.LogServiceImpl;
 import org.aspectj.lang.annotation.Aspect;
